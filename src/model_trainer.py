@@ -8,7 +8,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.tree import DecisionTreeRegressor
-from xgboost import XGBegressor
+from xgboost import XGBRegressor
 from exception import CustomException
 from logger import logging
 from utils import save_object, evaluate_models
@@ -16,14 +16,14 @@ from utils import save_object, evaluate_models
 
 @dataclass
 class ModelTrainerConfig:
-  trained_model_file_path = os.join("artifacts", "model.pkl")
+  trained_model_file_path = os.path.join("artifacts", "model.pkl")
 
 class ModelTrainer:
   def __init__ (self):
     self.model_trainer_config = ModelTrainerConfig()
 
 
-  def initiate_model_trainer(self, train_array, test_array,preprocessor_path):
+  def initiate_model_trainer(self, train_array, test_array):
     try:
       logging.info("Splitting training and test input data.")
       x_train, y_train, x_test, y_test = (
@@ -39,7 +39,7 @@ class ModelTrainer:
         "Gradient Boosting": GradientBoostingRegressor(),
         "Liner Regression" : LinearRegression(),
         "K-Neighbors Classifier" : KNeighborsRegressor(),
-        "XGBClassifier" : XGBegressor(),
+        "XGBClassifier" : XGBRegressor(),
         "CatBoosting Classifier" : CatBoostRegressor(verbose=False),
         "AdaBoost Classifier" : AdaBoostClassifier(),
       }
@@ -67,8 +67,8 @@ class ModelTrainer:
 
       predicted = best_model.predict(x_test)
       
-      r2_score = r2_score(y_test,predicted)
-      return r2_score
+      r2_square = r2_score(y_test,predicted)
+      return r2_square
     
 
 
