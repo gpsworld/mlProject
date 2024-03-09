@@ -1,2 +1,2 @@
 ## END TO END MACHINE LEARNING PROJECT
-tudent's performance analyzer
+Student's performance analyzer
