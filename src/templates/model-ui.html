@@ -1,0 +1,390 @@
+<!--
+  Hit RUN to see this project in action!
+  
+  This project will auto-refresh as you edit the HTML, CSS and JS. See README.md for more info (including how to disable auto-refresh and install packages).
+-->
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Student Performance Analysis</title>
+    <!-- <link href="style.css" rel="stylesheet" type="text/css" /> -->
+  </head>
+
+  <body>
+<style>
+html,
+body {
+  padding: 0;
+  margin: 0;
+  color:white;
+  font-weight: 800;
+  scroll-behavior: smooth;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+body {
+  background-image: url("E:\mlproject\src\templates\Gemini_Generated_Image (4).jpeg");
+  position: absolute;
+  backdrop-filter: blur(10px);
+  height: 110%;
+  width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+
+  body {
+    background-image: url("E:\mlproject\src\templates\Gemini_Generated_Image (4).jpeg");
+    position: absolute;
+    backdrop-filter: blur(10px);
+    height: 120%;
+    width: 100%;
+
+  }
+
+  .elements {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+
+
+  }
+
+  .mb-3 {
+    background-color: transparent;
+
+    margin-left: -2rem;
+
+  }
+
+  .form-control {
+    background-color: transparent;
+    color: white;
+    font-size: 1rem;
+    height: 2rem;
+    width: 12rem;
+    border-radius: 9px;
+    border: 2px solid white;
+  }
+
+  .button-64 {
+    align-items: center;
+    /* background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB); */
+    background-image: linear-gradient(300deg, #3f6783 0%, #313131 74%);
+    border: 0;
+    border-radius: 8px;
+    /* box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px; */
+    box-shadow: rgba(255, 255, 255, 0.2) 0 15px 30px -5px;
+
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: flex;
+    font-family: Phantomsans, sans-serif;
+    font-size: 20px;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 140px;
+    padding: 3px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+    margin-left: 0em;
+  }
+
+  .button-64:active,
+  .button-64:hover {
+    outline: 0;
+  }
+
+  .button-64 span {
+    background-color: rgb(5, 6, 45);
+    padding: 16px 24px;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+  }
+
+  .button-64:hover span {
+    background: none;
+  }
+
+  h2 {
+    margin-left: 2rem;
+  }
+
+
+
+
+  ;
+}
+
+h1 {
+  text-align: center;
+}
+
+.nav {
+
+  margin-top: 0;
+}
+
+.button-64 {
+  align-items: center;
+  /* background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB); */
+  background-image: linear-gradient(300deg, #3f6783 0%, #313131 74%);
+  border: 0;
+  border-radius: 8px;
+  /* box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px; */
+  box-shadow: rgba(255, 255, 255, 0.2) 0 15px 30px -5px;
+
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+  margin-left: 3.5em;
+}
+
+.button-64:active,
+.button-64:hover {
+  outline: 0;
+}
+
+.button-64 span {
+  background-color: rgb(5, 6, 45);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.button-64:hover span {
+  background: none;
+}
+
+.elements {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 70%;
+  flex-wrap: wrap;
+
+}
+
+.mb-3 {
+  margin-left: 2rem;
+
+  background-color: transparent;
+
+}
+
+select {
+  background-color: transparent;
+  color: white;
+  font-size: 1rem;
+  height: 2rem;
+  width: 100%;
+  border: 2px solid whitesmoke;
+  border-radius: 9px;
+  margin: 1rem;
+}
+
+input {
+  background-color: transparent;
+  width: 100%;
+  height: 1.5rem;
+  color: white;
+  border-radius: 9px;
+  border: 2px solid white;
+  margin: 1rem;
+}
+
+h2 {
+  margin-left: 2rem;
+}
+</style>
+    <div class="nav">
+      <div class="navbar">
+        <!doctype html>
+        <html>
+          <head>
+            <title>Student's Performance analyser</title>
+            <link rel="stylesheet" href="style.css" />
+            <style>
+              @import url("https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap");
+            </style>
+          </head>
+          <body>
+            <div class="login">
+              <form action="{{ url_for('predict_datapoint')}}" method="post">
+                <div class="nav">
+                  <h1>
+                    <legend class="barlow-condensed-extrabold">
+                      Student Exam Performance Prediction
+                    </legend>
+                  </h1>
+                </div>
+                <div class="container-1">
+                  <div class="elements">
+                    <div class="mb-3">
+                      <label class="form-label">Gender</label><br />
+                      <select
+                        class="form-control"
+                        name="gender"
+                        placeholder="Enter you Gender"
+                        required
+                      >
+                        <br />
+                        <option class="placeholder" selected disabled value="">
+                          Select your Gender
+                        </option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Race or Ethnicity</label><br />
+                      <select
+                        class="form-control"
+                        name="ethnicity"
+                        placeholder="Enter you ethnicity"
+                        required
+                      >
+                        <option class="placeholder" selected disabled value="">
+                          Select Ethnicity
+                        </option>
+                        <option value="group A">Group A</option>
+                        <option value="group B">Group B</option>
+                        <option value="group C">Group C</option>
+                        <option value="group D">Group D</option>
+                        <option value="group E">Group E</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label"
+                        >Parental Level of Education</label
+                      ><br />
+                      <select
+                        class="form-control"
+                        name="parental_level_of_education"
+                        placeholder="Enter you Parent Education"
+                        required
+                      >
+                        <option class="placeholder" selected disabled value="">
+                          Parent Education
+                        </option>
+                        <option value="associate's degree">
+                          associate's degree
+                        </option>
+                        <option value="bachelor's degree">
+                          bachelor's degree
+                        </option>
+                        <option value="high school">high school</option>
+                        <option value="master's degree">master's degree</option>
+                        <option value="some college">some college</option>
+                        <option value="some high school">
+                          some high school
+                        </option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Lunch Type</label><br />
+                      <select
+                        class="form-control"
+                        name="lunch"
+                        placeholder="Enter you Lunch"
+                        required
+                      >
+                        <option class="placeholder" selected disabled value="">
+                          Select Lunch Type
+                        </option>
+                        <option value="free/reduced">free/reduced</option>
+                        <option value="standard">standard</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Test preparation Course</label
+                      ><br />
+                      <select
+                        class="form-control"
+                        name="test_preparation_course"
+                        placeholder="Enter you Course"
+                        required
+                      >
+                        <option class="placeholder" selected disabled value="">
+                          Select Test_course
+                        </option>
+                        <option value="none">None</option>
+                        <option value="completed">Completed</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Writing Score out of 100</label
+                      ><br />
+                      <input
+                        class="form-control"
+                        type="number"
+                        name="reading_score"
+                        placeholder="Enter your Reading score"
+                        min="0"
+                        max="100"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Reading Score out of 100</label
+                      ><br />
+                      <input
+                        class="form-control"
+                        type="number"
+                        name="writing_score"
+                        placeholder="Enter your Reading Score"
+                        min="0"
+                        max="100"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <button
+                        class="button-64"
+                        role="button"
+                        type="submit"
+                        href="#res"
+                      >
+                        <span class="text">Predict your Maths Score</span>
+                      </button>
+                      <!-- <input class="btn btn-primary" type="submit" value="Predict your Maths Score" required /> -->
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <h2 id="res">The prediction is {{results}}</h2>
+            </div>
+          </body>
+        </html>
+      </div>
+    </div>
+  </body>
+</html>
